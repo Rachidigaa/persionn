@@ -1,0 +1,38 @@
+<div>
+  <h1>Game Management</h1>
+
+  <div>
+    <h2>Create Game</h2>
+    <input [(ngModel)]="playerName" placeholder="Player Name" />
+    <input [(ngModel)]="rounds" type="number" placeholder="Number of Rounds" />
+    <button (click)="createGame()">Create Game</button>
+  </div>
+
+  <div *ngIf="game">
+    <h2>Game ID: {{ game.id }}</h2>
+    <h3>Players: {{ game.players?.join(', ') }}</h3>
+    <h3>Current Round: {{ game.currentRound }}</h3>
+  </div>
+
+  <div>
+    <h2>Join Game</h2>
+    <input [(ngModel)]="gameId" type="number" placeholder="Game ID" />
+    <input [(ngModel)]="playerName" placeholder="Player Name" />
+    <button (click)="joinGame()">Join Game</button>
+  </div>
+
+  <div>
+    <h2>Play Round</h2>
+    <input [(ngModel)]="gameId" type="number" placeholder="Game ID" />
+    <input [(ngModel)]="playerId" type="number" placeholder="Player ID" />
+    <input [(ngModel)]="move" placeholder="Your Move" />
+    <button (click)="playRound()">Play Round</button>
+  </div>
+
+  <div>
+    <h2>Quit Game</h2>
+    <input [(ngModel)]="playerId" type="number" placeholder="Player ID" />
+    <input [(ngModel)]="strategie" placeholder="Strategy" />
+    <button (click)="quittePartie()">Quit Game</button>
+  </div>
+</div>
